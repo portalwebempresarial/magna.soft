@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Magna POS 360 | Últimos Cupos Gratis para Tenderos</title>
+  <meta name="description" content="Controla tu tienda, caja, inventario y fiados desde el celular o computador. Únete gratis al programa piloto antes de que se agoten los últimos cupos." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    @keyframes pulse-ring {
+      0% { transform: scale(0.95); opacity: 0.7; }
+      70% { transform: scale(1.15); opacity: 0; }
+      100% { transform: scale(0.95); opacity: 0; }
+    }
+    .pulse-ring::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: inherit;
+      background: #22c55e;
+      z-index: -1;
+      animation: pulse-ring 2s infinite;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-emerald-500 selection:text-slate-950">
+
+  <!-- Barra superior de urgencia + Cronómetro -->
+  <div class="sticky top-0 z-50 bg-amber-400 text-slate-950 px-3 py-2.5 shadow-lg border-b border-amber-500">
+    <div class="max-w-4xl mx-auto flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-center">
+      <span class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-extrabold uppercase tracking-wide">
+        <span class="w-2.5 h-2.5 rounded-full bg-red-600 animate-ping"></span>
+        ¡ÚLTIMOS 17 CUPOS GRATIS! El registro cierra en:
+      </span>
+      <div id="countdown" class="flex items-center gap-1.5 font-extrabold text-sm sm:text-base">
+        <span class="bg-slate-950 text-amber-400 px-2 py-0.5 rounded-md tabular-nums" id="hours">04</span>:
+        <span class="bg-slate-950 text-amber-400 px-2 py-0.5 rounded-md tabular-nums" id="minutes">47</span>:
+        <span class="bg-slate-950 text-amber-400 px-2 py-0.5 rounded-md tabular-nums" id="seconds">19</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar minimalista -->
+  <header class="max-w-5xl mx-auto px-4 pt-5 pb-2 flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center font-extrabold text-slate-950 text-lg shadow-md">
+        M
+      </div>
+      <div>
+        <span class="font-extrabold text-lg tracking-tight text-white">Magna POS <span class="text-emerald-400">360</span></span>
+        <span class="block text-[11px] text-slate-400 leading-none">Programa Piloto Colombia</span>
+      </div>
+    </div>
+    <a href="#reclamar-cupo" class="text-xs sm:text-sm font-bold bg-slate-800 hover:bg-slate-700 text-emerald-400 border border-emerald-500/30 px-3.5 py-2 rounded-full transition">
+      Ver cupos disponibles
+    </a>
+  </header>
+
+  <!-- Hero Section: Directo al dolor del tendero -->
+  <main>
+    <section class="max-w-4xl mx-auto px-4 pt-8 pb-12 text-center">
+      <div class="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full mb-5">
+        🇨🇴 Especial para Tiendas, Minimercados y Comercios en Colombia
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight tracking-tight mb-5">
+        Deja el cuaderno y controla tu tienda <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">100% GRATIS</span>
+      </h1>
+
+      <p class="text-base sm:text-xl text-slate-300 max-w-2xl mx-auto mb-7 leading-relaxed">
+        Cobra más rápido, evita que se pierda mercancía, lleva el control exacto de los <strong class="text-white">fiados</strong> y cuadra tu caja sin dolores de cabeza. Sin mensualidades ni contratos.
+      </p>
+
+      <!-- Barra de escasez de cupos -->
+      <div class="max-w-md mx-auto bg-slate-900/90 border border-slate-800 rounded-2xl p-4 mb-8 shadow-xl">
+        <div class="flex justify-between items-center text-xs sm:text-sm font-bold mb-2">
+          <span class="text-slate-300">Cupos Piloto entregados: <strong class="text-white">83 / 100</strong></span>
+          <span class="text-amber-400 animate-pulse">¡Quedan solo 17!</span>
+        </div>
+        <div class="w-full h-3.5 bg-slate-800 rounded-full overflow-hidden p-0.5">
+          <div class="h-full bg-gradient-to-r from-emerald-500 via-amber-400 to-orange-500 rounded-full transition-all duration-1000" style="width: 83%;"></div>
+        </div>
+        <p class="text-[11px] text-slate-400 mt-2">
+          Precio normal: <span class="line-through text-slate-500">$45.000 COP/mes</span> — Hoy: <strong class="text-emerald-400">$0 COP (Acceso Piloto)</strong>
+        </p>
+      </div>
+
+      <!-- CTA Principal -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <button onclick="abrirWhatsApp('Quiero reclamar uno de los últimos cupos GRATIS de Magna POS 360 para mi negocio')" 
+                class="relative pulse-ring w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-base sm:text-lg px-8 py-4 rounded-2xl shadow-lg shadow-emerald-500/25 transition transform hover:-translate-y-0.5 cursor-pointer">
+          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
+          ÚNETE AHORA GRATIS POR WHATSAPP
+        </button>
+      </div>
+      <p class="text-xs text-slate-400 mt-3">✅ Activación en 5 minutos • ✅ Soporte incluido • ✅ Sin tarjeta de crédito</p>
+    </section>
+
+    <!-- Beneficios concretos para el tendero (4 tarjetas simples) -->
+    <section class="max-w-5xl mx-auto px-4 py-10">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Todo lo que necesitas en el mostrador</h2>
+        <p class="text-sm sm:text-base text-slate-400 mt-1">Diseñado para ser tan fácil como usar WhatsApp</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-slate-900/70 border border-slate-800 p-5 rounded-2xl">
+          <div class="w-11 h-11 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center text-2xl mb-3">⚡</div>
+          <h3 class="font-bold text-lg text-white mb-1">Vende en segundos</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">Busca productos rápido, cobra en efectivo, transferencia o <strong class="text-slate-200">Bre-B</strong> y entrega recibo.</p>
+        </div>
+
+        <div class="bg-slate-900/70 border border-slate-800 p-5 rounded-2xl">
+          <div class="w-11 h-11 rounded-xl bg-amber-500/15 text-amber-400 flex items-center justify-center text-2xl mb-3">📦</div>
+          <h3 class="font-bold text-lg text-white mb-1">Cero pérdidas de mercancía</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">Controla entradas, salidas y recibe alertas cuando un producto esté por acabarse.</p>
+        </div>
+
+        <div class="bg-slate-900/70 border border-slate-800 p-5 rounded-2xl">
+          <div class="w-11 h-11 rounded-xl bg-sky-500/15 text-sky-400 flex items-center justify-center text-2xl mb-3">📒</div>
+          <h3 class="font-bold text-lg text-white mb-1">Control de fiados y clientes</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">Que no se te olvide ni un peso. Registra abonos, saldos pendientes y clientes frecuentes.</p>
+        </div>
+
+        <div class="bg-slate-900/70 border border-slate-800 p-5 rounded-2xl">
+          <div class="w-11 h-11 rounded-xl bg-purple-500/15 text-purple-400 flex items-center justify-center text-2xl mb-3">💰</div>
+          <h3 class="font-bold text-lg text-white mb-1">Cuadre de caja exacto</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">Abre y cierra turno sabiendo exactamente cuánto entró, cuánto salió y cuánto ganaste hoy.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Comparativa + Registro Rápido -->
+    <section id="reclamar-cupo" class="max-w-3xl mx-auto px-4 py-10">
+      <div class="bg-gradient-to-b from-slate-900 to-slate-900/60 border-2 border-emerald-500/50 rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
+        <div class="absolute top-0 right-0 bg-emerald-500 text-slate-950 font-extrabold text-xs px-4 py-1.5 rounded-bl-2xl uppercase tracking-wider">
+          100% Subsidiado • Piloto
+        </div>
+
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-2">Asegura tu sistema POS gratis hoy</h2>
+        <p class="text-sm sm:text-base text-slate-300 mb-6">
+          Completa tus datos y te activamos tu cuenta por WhatsApp en minutos antes de que se llenen los 100 comercios piloto.
+        </p>
+
+        <!-- Formulario directo a WhatsApp para máxima conversión -->
+        <form id="leadForm" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-300 uppercase mb-1.5">Tu Nombre</label>
+              <input type="text" id="nombre" required placeholder="Ej: Carlos Pérez"
+                     class="w-full bg-slate-950 border border-slate-700 focus:border-emerald-400 rounded-xl px-4 py-3 text-white placeholder-slate-500 outline-none transition" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-300 uppercase mb-1.5">Nombre de tu Tienda / Negocio</label>
+              <input type="text" id="negocio" required placeholder="Ej: Minimercado La Economía"
+                     class="w-full bg-slate-950 border border-slate-700 focus:border-emerald-400 rounded-xl px-4 py-3 text-white placeholder-slate-500 outline-none transition" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-300 uppercase mb-1.5">Ciudad / Municipio</label>
+              <input type="text" id="ciudad" required placeholder="Ej: Bogotá, Cali, Medellín..."
+                     class="w-full bg-slate-950 border border-slate-700 focus:border-emerald-400 rounded-xl px-4 py-3 text-white placeholder-slate-500 outline-none transition" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-300 uppercase mb-1.5">Tipo de Comercio</label>
+              <select id="tipo" class="w-full bg-slate-950 border border-slate-700 focus:border-emerald-400 rounded-xl px-4 py-3 text-white outline-none transition">
+                <option value="Tienda de barrio / Minimercado">Tienda de barrio / Minimercado</option>
+                <option value="Ferretería / Miscelánea">Ferretería / Miscelánea</option>
+                <option value="Ropa / Calzado / Belleza">Ropa / Calzado / Belleza</option>
+                <option value="Otro comercio">Otro comercio</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit"
+                  class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-base sm:text-lg py-4 rounded-2xl shadow-lg shadow-emerald-500/20 transition transform hover:-translate-y-0.5 cursor-pointer">
+            RECLAMAR MI CUPO GRATIS AHORA →
+          </button>
+        </form>
+
+        <div class="mt-6 pt-5 border-t border-slate-800 flex flex-wrap items-center justify-center gap-4 text-xs text-slate-400">
+          <span>🔒 Tus datos están seguros</span>
+          <span>💻 Funciona en PC, tablet o celular</span>
+          <span>🇨🇴 Soporte humano en Colombia</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Botón flotante de WhatsApp -->
+  <button onclick="abrirWhatsApp('Hola, vi la promo de últimos cupos gratis de Magna POS 360 y quiero activar mi tienda')"
+          aria-label="Contactar por WhatsApp"
+          class="fixed bottom-5 right-5 z-50 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold px-4 py-3.5 rounded-full shadow-2xl flex items-center gap-2 transition transform hover:scale-105 cursor-pointer">
+    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
+    <span class="hidden sm:inline text-sm">Hablar con asesor</span>
+  </button>
+
+  <footer class="text-center text-xs text-slate-500 py-8 border-t border-slate-900">
+    Desarrollado por <strong class="text-slate-400">Magna Soft</strong> • Magna POS 360 Colombia • Cupos sujetos a disponibilidad del programa piloto.
+  </footer>
+
+  <script>
+    // Configuración de WhatsApp (Actualiza el número si usas otra línea comercial)
+    const WHATSAPP_NUMBER = "573228037240";
+
+    function abrirWhatsApp(mensaje) {
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`;
+      window.open(url, '_blank');
+    }
+
+    // Envío del formulario directo a WhatsApp con datos estructurados
+    document.getElementById('leadForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const nombre = document.getElementById('nombre').value.trim();
+      const negocio = document.getElementById('negocio').value.trim();
+      const ciudad = document.getElementById('ciudad').value.trim();
+      const tipo = document.getElementById('tipo').value;
+
+      const mensaje = `¡Hola! Quiero reclamar uno de los últimos cupos GRATIS de Magna POS 360.\n\n` +
+                      `👤 *Nombre:* ${nombre}\n` +
+                      `🏪 *Negocio:* ${negocio}\n` +
+                      `📍 *Ciudad:* ${ciudad}\n` +
+                      `📦 *Tipo:* ${tipo}`;
+      abrirWhatsApp(mensaje);
+    });
+
+    // Cronómetro regresivo persistente (4h 47m iniciales en localStorage)
+    const STORAGE_KEY = 'magnapos_timer_end';
+    let endTime = localStorage.getItem(STORAGE_KEY);
+
+    if (!endTime || parseInt(endTime) <= Date.now()) {
+      // Inicia en 4 horas, 47 minutos y 19 segundos
+      endTime = Date.now() + (4 * 3600 + 47 * 60 + 19) * 1000;
+      localStorage.setItem(STORAGE_KEY, endTime);
+    }
+
+    function updateTimer() {
+      const now = Date.now();
+      let diff = Math.max(0, Math.floor((endTime - now) / 1000));
+
+      if (diff === 0) {
+        endTime = Date.now() + (2 * 3600) * 1000;
+        localStorage.setItem(STORAGE_KEY, endTime);
+        diff = 7200;
+      }
+
+      const h = String(Math.floor(diff / 3600)).padStart(2, '0');
+      const m = String(Math.floor((diff % 3600) / 60)).padStart(2, '0');
+      const s = String(diff % 60).padStart(2, '0');
+
+      document.getElementById('hours').textContent = h;
+      document.getElementById('minutes').textContent = m;
+      document.getElementById('seconds').textContent = s;
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  </script>
+</body>
+</html>
